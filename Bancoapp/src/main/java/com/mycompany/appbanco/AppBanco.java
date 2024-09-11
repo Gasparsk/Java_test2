@@ -12,10 +12,10 @@ public class AppBanco {
         Scanner sc = new Scanner(System.in);
         Conta conta;
 
-        System.out.print("Insira o numero da conta: ");
+        System.out.print("Digite o numero da conta: ");
         int numero = sc.nextInt();
 
-        System.out.print("Insira o titular da conta: ");
+        System.out.print("Digite o titular da conta: ");
         sc.nextLine();
 
         String titular = sc.nextLine();
@@ -26,11 +26,11 @@ public class AppBanco {
         char contaEspecial = sc.next().charAt(0);
 
         if (contaEspecial == 'y') {
-            System.out.print("Insira o limite de empréstimo: ");
+            System.out.print("Digite o limite de empréstimo: ");
             double limiteEmprestimo = sc.nextDouble();
 
             if (resposta == 'y') {
-                System.out.print("Insira o valor do deposito inicial: ");
+                System.out.print("Digite o valor inicial do deposito: ");
                 double inicialDeposito = sc.nextDouble();
                 conta = new ContaEspecial(numero, titular, inicialDeposito, limiteEmprestimo);
             } else {
@@ -38,7 +38,7 @@ public class AppBanco {
             }
         } else {
             if (resposta == 'y') {
-                System.out.print("Insira o valor do deposito inicial: ");
+                System.out.print("Digite o valor inicial do deposito: ");
                 double inicialDeposito = sc.nextDouble();
                 conta = new Conta(numero, titular, inicialDeposito);
             } else {
@@ -51,14 +51,14 @@ public class AppBanco {
         System.out.println(conta);
 
         System.out.println();
-        System.out.print("Insira um valor de deposito: ");
+        System.out.print("Digite um valor de deposito: ");
         double depositoValor = sc.nextDouble();
         conta.deposito(depositoValor);
         System.out.println("Dados da conta atualizados:");
         System.out.println(conta);
 
         System.out.println();
-        System.out.print("Insira um valor de retirada: ");
+        System.out.print("Digite um valor de retirada: ");
         double saqueValor = sc.nextDouble();
         conta.saque(saqueValor);
         System.out.println("Dados da conta atualizados:");
@@ -71,7 +71,7 @@ public class AppBanco {
             System.out.print("Deseja realizar um empréstimo (y/n)? ");
             char emprestimoResposta = sc.next().charAt(0);
             if (emprestimoResposta == 'y') {
-                System.out.print("Informe o valor do empréstimo: ");
+                System.out.print("Digite o valor do empréstimo: ");
                 double valorEmprestimo = sc.nextDouble();
                 contaEsp.emprestimo(valorEmprestimo);
                 System.out.println("Dados da conta após empréstimo:");
